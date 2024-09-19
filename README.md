@@ -15,7 +15,23 @@ The data for this project is obtained from the Kaggle dataset:
 
 - **Dataset Link** [Amazon Prime Movies and TV Shows Dataset](https://www.kaggle.com/datasets/shivamb/amazon-prime-movies-and-tv-shows)
 
-## Schema, Business Problems ans Solutions
-![](https://github.com/MyDataAnaAnalysis/prime_sql_project/blob/main/SQLQuery6.sql)
+## Schema
+CREATE TABLE amazon_prime_titles (
+    show_id VARCHAR(50) PRIMARY KEY,
+    type VARCHAR(50),
+    title VARCHAR(255),
+    director VARCHAR(255),
+    Featured_artists TEXT,
+    country VARCHAR(255), -- Increased from 100 to 255
+    date_added DATE,
+    release_year INT,
+    rating VARCHAR(50),
+    duration VARCHAR(50),
+    listed_in VARCHAR(255),
+    description TEXT
+);
+
+## Business Problems ans Solutions
+
 
 
