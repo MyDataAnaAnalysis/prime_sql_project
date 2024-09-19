@@ -15,4 +15,6 @@ The data for this project is obtained from the Kaggle dataset:
 
 - **Dataset Link** [Amazon Prime Movies and TV Shows Dataset](https://www.kaggle.com/datasets/shivamb/amazon-prime-movies-and-tv-shows)
 
+## Schema, Business Problems ans Solutions
+
 
