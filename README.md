@@ -32,8 +32,70 @@ CREATE TABLE amazon_prime_titles (
     description TEXT
 );
 ```
+```
+--Confirm the Row Count of the CSV File
+
+select * from amazon_prime_titles;
+
+Select 
+ Count (*) as total_content
+From amazon_prime_titles;
+
+--Check for the distinct show_type
+
+SELECT DISTINCT show_type AS show_type
+FROM amazon_prime_titles;
+```
 
 ## Business Problems ans Solutions
+
+```
+--1. Count the number of Movies vs TV Shows
+
+Select 
+ show_type,
+ count(*) as total_content
+ from amazon_prime_titles
+ Group by show_type
+```
+```
+-- 2. Find the most common rating for movies and TV shows
+
+WITH RatingCounts AS (
+    SELECT 
+        show_type, 
+        rating,
+        COUNT(*) AS total_count
+    FROM amazon_prime_titles
+    GROUP BY show_type, rating
+),
+RankedRatings AS (
+    SELECT 
+        show_type,
+        rating,
+        total_count,
+        RANK() OVER (PARTITION BY show_type ORDER BY total_count DESC) AS ranking
+    FROM RatingCounts
+)
+SELECT 
+    show_type, 
+    rating,
+    total_count,
+    ranking
+FROM RankedRatings
+WHERE ranking = 1
+ORDER BY show_type;
+/*
+The WITH clause in SQL is used to define Common Table Expressions (CTEs), which are temporary result sets that you can reference within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs make it easier to organize complex queries, improve readability, and break down a problem into simpler parts.
+Purpose: This CTE calculates the count of each rating for each show_type.
+Components:
+RatingCounts: The name of the CTE. It acts like a temporary table for the duration of the query.
+SELECT show_type, rating, COUNT(*) AS total_count: Aggregates the data by show_type and rating, counting the occurrences of each rating.
+FROM amazon_prime_titles: The source table.
+GROUP BY show_type, rating: Groups the results by show_type and rating to compute the count for each combination.
+*/
+```
+
 
 
 
