@@ -16,6 +16,7 @@ The data for this project is obtained from the Kaggle dataset:
 - **Dataset Link** [Amazon Prime Movies and TV Shows Dataset](https://www.kaggle.com/datasets/shivamb/amazon-prime-movies-and-tv-shows)
 
 ## Schema
+```
 CREATE TABLE amazon_prime_titles (
     show_id VARCHAR(50) PRIMARY KEY,
     type VARCHAR(50),
@@ -30,6 +31,7 @@ CREATE TABLE amazon_prime_titles (
     listed_in VARCHAR(255),
     description TEXT
 );
+```
 
 ## Business Problems ans Solutions
 
