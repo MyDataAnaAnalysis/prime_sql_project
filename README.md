@@ -10,4 +10,9 @@ This project involves a comprehensive analysis of Amazon Prime Video's movies an
  3. Compile and review content based on release years, countries of origin, and durations.
  4. Investigate and classify content based on specific criteria and keywords.
 
+## Data source
+The data for this project is obtained from the Kaggle dataset.
+
+- **Dataset Link** [Movies Dataset](https://www.kaggle.com/datasets/shivamb/amazon-prime-movies-and-tv-shows)
+
 
