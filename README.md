@@ -47,7 +47,7 @@ SELECT DISTINCT show_type AS show_type
 FROM amazon_prime_titles;
 ```
 
-## Business Problems ans Solutions
+## Business Problems and Solutions
 
 ```
 --1. Count the number of Movies vs TV Shows
